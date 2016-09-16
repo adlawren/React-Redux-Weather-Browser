@@ -5,9 +5,6 @@ import GoogleMap from '../components/component_google_map';
 
 class WeatherList extends Component {
   renderWeather(cityData) {
-    const height = 120;
-    const width = 180;
-
     const name = cityData.city.name;
     const { lon, lat } = cityData.city.coord;
     const temps = cityData.list.map(weather => weather.main.temp);
@@ -21,24 +18,18 @@ class WeatherList extends Component {
         </td>
         <td>
           <Chart
-            width={width}
-            height={height}
             data={temps}
             units="K"
             color={"blue"}/>
         </td>
         <td>
           <Chart
-            width={width}
-            height={height}
             data={humidities}
             units="%"
             color={"purple"}/>
         </td>
         <td>
           <Chart
-            width={width}
-            height={height}
             data={pressures}
             units="hPa"
             color={"red"}/>
